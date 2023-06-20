@@ -9,9 +9,9 @@ namespace JT.DomainDrivenDesign.Presentation.Controllers;
 [Route("[controller]")]
 public class VehicleController : ControllerBase
 {
-    private readonly IVehicleCommandHandler _handler;
+    private readonly IVehicleHandler _handler;
 
-    public VehicleController(IVehicleCommandHandler handler)
+    public VehicleController(IVehicleHandler handler)
     {
         _handler = handler;
     }

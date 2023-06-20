@@ -3,12 +3,12 @@ using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
 
 namespace JT.DomainDrivenDesign.Application.Vehicle.Handlers;
 
-public interface IVehicleCommandHandler
+public interface IVehicleHandler
 {
     Task Handle(OperationType operationType, VehicleDto vehicle);
 }
 
-public class VehicleHandler : IVehicleCommandHandler
+public class VehicleHandler : IVehicleHandler
 {
     private readonly IVehicleRepository _vehicleRepository;
 

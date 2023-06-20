@@ -15,7 +15,7 @@ public class VehicleControllerTests
     public async Task Create_Vehicle_Is_Successful()
     {
         // Arrange
-        var mockHandler = new Mock<IVehicleCommandHandler>();
+        var mockHandler = new Mock<IVehicleHandler>();
         mockHandler.Setup(handler => handler.Handle(OperationType.Create, It.IsAny<VehicleDto>()));
         var controller = new VehicleController(mockHandler.Object);
 
@@ -29,5 +29,11 @@ public class VehicleControllerTests
         // Assert
         var okResult = Assert.IsType<OkResult>(result);
         Assert.Equal(200, okResult.StatusCode);
+    }
+
+    [Fact]
+    public async Task Retrieve_Vehicle_Is_Successful()
+    {
+        
     }
 }

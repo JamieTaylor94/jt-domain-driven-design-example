@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IVehicleCommandHandler, VehicleHandler>();
+builder.Services.AddScoped<IVehicleHandler, VehicleHandler>();
 builder.Services.AddScoped<IVehicleRepository, DynamoVehicleRepository>();
 
 var app = builder.Build();
