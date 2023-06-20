@@ -22,7 +22,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\JT.DomainDrivenDesign.Presentation\JT.DomainDrivenDesign.Presentation.csproj" />
+      <ProjectReference Include="..\..\src\JT.DomainDrivenDesign.Application\JT.DomainDrivenDesign.Application.csproj" />
+      <ProjectReference Include="..\..\src\JT.DomainDrivenDesign.Domain\JT.DomainDrivenDesign.Domain.csproj" />
+      <ProjectReference Include="..\..\src\JT.DomainDrivenDesign.Application\JT.DomainDrivenDesign.Application.csproj" />
+      <ProjectReference Include="..\..\src\JT.DomainDrivenDesign.Domain\JT.DomainDrivenDesign.Domain.csproj" />
+      <ProjectReference Include="..\..\src\JT.DomainDrivenDesign.Infrastructure\JT.DomainDrivenDesign.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

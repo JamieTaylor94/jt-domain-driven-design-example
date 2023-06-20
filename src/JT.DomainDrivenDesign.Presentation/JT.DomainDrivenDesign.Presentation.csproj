@@ -11,8 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\JT.DomainDrivenDesign.Application\JT.DomainDrivenDesign.Application.csproj" />
-      <ProjectReference Include="..\JT.DomainDrivenDesign.Infrastructure\JT.DomainDrivenDesign.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\src\JT.DomainDrivenDesign.Application\JT.DomainDrivenDesign.Application.csproj" />
+      <ProjectReference Include="..\..\src\JT.DomainDrivenDesign.Infrastructure\JT.DomainDrivenDesign.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

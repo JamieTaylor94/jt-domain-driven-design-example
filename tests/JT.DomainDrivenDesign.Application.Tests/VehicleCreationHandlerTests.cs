@@ -1,3 +1,5 @@
+
+
 using System;
 using System.Threading.Tasks;
 using JT.DomainDrivenDesign.Application.Dtos;
@@ -7,7 +9,6 @@ using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
 using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
 using Moq;
 using Xunit;
-using Colour = JT.DomainDrivenDesign.Application.Dtos.Colour;
 
 namespace JT.DomainDrivenDesign.Application.Tests;
 
