@@ -1,5 +1,5 @@
-using JT.DomainDrivenDesign.Application;
 using JT.DomainDrivenDesign.Application.Dtos;
+using JT.DomainDrivenDesign.Application.Handlers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JT.DomainDrivenDesign.Presentation.Controllers

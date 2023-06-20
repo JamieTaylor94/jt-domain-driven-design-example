@@ -1,3 +1,5 @@
+using JT.DomainDrivenDesign.Domain.VehicleDomain.ValueObjects;
+
 namespace JT.DomainDrivenDesign.Domain.VehicleDomain;
 
 public class VehicleCreationInput

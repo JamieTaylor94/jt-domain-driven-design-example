@@ -1,4 +1,4 @@
-namespace JT.DomainDrivenDesign.Domain.VehicleDomain;
+namespace JT.DomainDrivenDesign.Domain.VehicleDomain.ValueObjects;
 
 public class Hitbox
 {

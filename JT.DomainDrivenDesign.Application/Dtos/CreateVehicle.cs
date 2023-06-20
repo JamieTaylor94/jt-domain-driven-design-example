@@ -8,3 +8,4 @@ public class CreateVehicle
     public Colour Colour { get; set; }
     public string Hitbox { get; set; }
 }
+

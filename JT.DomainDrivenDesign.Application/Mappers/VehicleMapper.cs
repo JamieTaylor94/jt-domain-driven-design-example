@@ -1,10 +1,9 @@
 using JT.DomainDrivenDesign.Application.Dtos;
 using JT.DomainDrivenDesign.Domain.VehicleDomain;
-using Colour = JT.DomainDrivenDesign.Domain.VehicleDomain.Colour;
+using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
+using Colour = JT.DomainDrivenDesign.Domain.VehicleDomain.ValueObjects.Colour;
 
 namespace JT.DomainDrivenDesign.Application.Mappers;
-
-// Mapper is an application layer service
 
 public class VehicleMapper
 {

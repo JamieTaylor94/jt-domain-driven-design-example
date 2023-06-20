@@ -1,15 +1,19 @@
+using JT.DomainDrivenDesign.Application.Handlers;
+using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
+using JT.DomainDriverDesign.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<IVehicleCreationHandler, VehicleCreationHandler>();
+builder.Services.AddScoped<IVehicleRepository, DynamoVehicleRepository>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

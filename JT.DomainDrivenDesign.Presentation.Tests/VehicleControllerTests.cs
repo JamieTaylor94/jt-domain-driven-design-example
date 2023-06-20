@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using JT.DomainDrivenDesign.Application;
 using JT.DomainDrivenDesign.Application.Dtos;
+using JT.DomainDrivenDesign.Application.Handlers;
 using JT.DomainDrivenDesign.Presentation.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;

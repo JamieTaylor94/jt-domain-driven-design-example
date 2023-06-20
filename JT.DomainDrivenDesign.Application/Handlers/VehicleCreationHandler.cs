@@ -1,15 +1,15 @@
 ﻿using JT.DomainDrivenDesign.Application.Dtos;
 using JT.DomainDrivenDesign.Application.Mappers;
-using JT.DomainDrivenDesign.Domain.VehicleDomain;
+using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
 
-namespace JT.DomainDrivenDesign.Application;
+namespace JT.DomainDrivenDesign.Application.Handlers;
 
 public interface IVehicleCreationHandler
 {
     Task Handle(CreateVehicle createVehicle);
 }
 
-public class VehicleCreationHandler
+public class VehicleCreationHandler : IVehicleCreationHandler
 {
     private readonly IVehicleRepository _vehicleRepository;
 

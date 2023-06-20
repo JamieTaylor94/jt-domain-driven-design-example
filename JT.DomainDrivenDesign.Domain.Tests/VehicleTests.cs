@@ -1,5 +1,7 @@
 using System;
 using JT.DomainDrivenDesign.Domain.VehicleDomain;
+using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
+using JT.DomainDrivenDesign.Domain.VehicleDomain.ValueObjects;
 using Xunit;
 
 namespace JT.DomainDrivenDesign.Domain.Tests;
