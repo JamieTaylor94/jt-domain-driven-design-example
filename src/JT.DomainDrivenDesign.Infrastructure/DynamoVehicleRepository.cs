@@ -5,12 +5,12 @@ namespace JT.DomainDriverDesign.Infrastructure;
 
 public class DynamoVehicleRepository : IVehicleRepository
 {
-    public async Task Add(Vehicle vehicle)
+    public async Task Add(VehicleEntity vehicleEntity)
     {
         throw new NotImplementedException();
     }
         
-    public async Task<Vehicle> Get(string id)
+    public async Task<VehicleEntity> Get(string id)
     {
         throw new NotImplementedException();
     }

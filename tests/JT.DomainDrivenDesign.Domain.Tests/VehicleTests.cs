@@ -19,7 +19,7 @@ public class VehicleTests
         var hitbox = "Octane";
 
         // Act
-        var vehicle = Vehicle.Create(new VehicleCreationInput
+        var vehicle = VehicleEntity.Create(new VehicleCreationInput
         {
             Id = id,
             Model = model,

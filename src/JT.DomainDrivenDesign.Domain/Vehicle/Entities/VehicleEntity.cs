@@ -2,7 +2,7 @@ using JT.DomainDrivenDesign.Domain.VehicleDomain.ValueObjects;
 
 namespace JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
 
-public class Vehicle
+public class VehicleEntity
 {
     public string Id { get; }
     public string Model { get; }
@@ -10,7 +10,7 @@ public class Vehicle
     public Colour Colour { get; }
     public Hitbox Hitbox { get; }
 
-    private Vehicle(string id, string model, string description, Colour colour, Hitbox hitbox)
+    private VehicleEntity(string id, string model, string description, Colour colour, Hitbox hitbox)
     {
         Id = id;
         Model = model;
@@ -19,9 +19,9 @@ public class Vehicle
         Hitbox = hitbox;
     }
 
-    public static Vehicle Create(VehicleCreationInput input)
+    public static VehicleEntity Create(VehicleCreationInput input)
     {
-        return new Vehicle(
+        return new VehicleEntity(
             id: input.Id,
             model: input.Model,
             description: input.Description,

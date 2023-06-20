@@ -1,6 +1,6 @@
-namespace JT.DomainDrivenDesign.Application.Dtos;
+namespace JT.DomainDrivenDesign.Application.Vehicle.Dtos;
 
-public class Colour
+public class ColourDto
 {
     public byte Red { get; set; }
     public byte Green { get; set; }

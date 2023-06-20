@@ -4,6 +4,6 @@ namespace JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
 
 public interface IVehicleRepository
 { 
-      Task Add(Vehicle vehicle);
-      Task<Vehicle> Get(string id);
+      Task Add(VehicleEntity vehicleEntity);
+      Task<VehicleEntity> Get(string id);
 }

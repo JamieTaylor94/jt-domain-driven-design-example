@@ -1,9 +1,8 @@
-
-
 using System;
 using System.Threading.Tasks;
-using JT.DomainDrivenDesign.Application.Dtos;
-using JT.DomainDrivenDesign.Application.Handlers;
+using JT.DomainDrivenDesign.Application.Vehicle;
+using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
+using JT.DomainDrivenDesign.Application.Vehicle.Handlers;
 using JT.DomainDrivenDesign.Domain.VehicleDomain;
 using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
 using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
@@ -21,15 +20,15 @@ public class VehicleCreationHandlerTests
         var mockVehicle = CreateVehicleMock();
 
         var vehicleRepositoryMock = new Mock<IVehicleRepository>();
-        vehicleRepositoryMock.Setup(r => r.Get(mockVehicle.Id))!.ReturnsAsync((Vehicle)null!);
+        vehicleRepositoryMock.Setup(r => r.Get(mockVehicle.Id))!.ReturnsAsync((VehicleEntity)null!);
 
-        var vehicleCreationHandler = new VehicleCreationHandler(vehicleRepositoryMock.Object);
+        var commandHandler = new VehicleHandler(vehicleRepositoryMock.Object);
 
         // Act
-        await vehicleCreationHandler.Handle(mockVehicle);
+        await commandHandler.Handle(OperationType.Create, mockVehicle);
 
         // Assert
-        vehicleRepositoryMock.Verify(r => r.Add(It.IsAny<Vehicle>()), Times.Once);
+        vehicleRepositoryMock.Verify(r => r.Add(It.IsAny<VehicleEntity>()), Times.Once);
     }
 
     [Fact]
@@ -38,20 +37,20 @@ public class VehicleCreationHandlerTests
         // Arrange
         var mockVehicle = CreateVehicleMock();
 
-        var vehicleCreationHandler = new VehicleCreationHandler(CreateExistingVehicleMock().Object);
+        var commandHandler = new VehicleHandler(CreateExistingVehicleMock().Object);
 
         // Act and Assert
-        await Assert.ThrowsAsync<Exception>(() => vehicleCreationHandler.Handle(mockVehicle));
+        await Assert.ThrowsAsync<Exception>(() => commandHandler.Handle(OperationType.Create, mockVehicle));
     }
 
-    private CreateVehicle CreateVehicleMock()
+    private VehicleDto CreateVehicleMock()
     {
-        return new CreateVehicle
+        return new VehicleDto
         {
             Id = "123",
             Description = "test description",
             Model = "test model",
-            Colour = new Colour
+            ColourDto = new ColourDto
             {
                 Red = 255, Green = 0, Blue = 0
             },
@@ -62,7 +61,7 @@ public class VehicleCreationHandlerTests
     private Mock<IVehicleRepository> CreateExistingVehicleMock()
     {
         const string id = "123";
-        var existingVehicle = Vehicle.Create(
+        var existingVehicle = VehicleEntity.Create(
             new VehicleCreationInput
             {
                 Id = id,
