@@ -1,8 +1,9 @@
 using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
 using JT.DomainDrivenDesign.Application.Vehicle.Handlers;
+using JT.DomainDrivenDesign.Presentation.Controllers.Vehicle.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JT.DomainDrivenDesign.Presentation.Controllers;
+namespace JT.DomainDrivenDesign.Presentation.Controllers.Vehicle;
 
 [ApiController]
 [Route("[controller]")]
@@ -30,24 +31,15 @@ public class VehiclesController : ControllerBase
     }
 
     [HttpGet(Name = "Retrieve")]
-    public async Task<IActionResult> Retrieve(string vehicleId)
+    public async Task<IActionResult> Retrieve(RetrieveMessage message)
     {
         var response = await _retrieveVehicleQueryHandler
             .Handle(new RetrieveVehicleQuery(new VehicleDto
             {
-                Id = vehicleId
+                Id = message.VehicleId
             }))
             .ConfigureAwait(false);
 
         return Ok(response);
     }
-}
-
-public class CreateMessage
-{
-    [FromBody]
-    public VehicleDto Vehicle { get; set; }
-
-    [FromRoute(Name = "id")]
-    public string Id { get; set; }
 }

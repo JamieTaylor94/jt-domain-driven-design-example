@@ -1,5 +1,5 @@
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
+using JT.DomainDrivenDesign.Domain.Vehicle.Entities;
+using JT.DomainDrivenDesign.Domain.Vehicle.Repositories;
 
 namespace JT.DomainDriverDesign.Infrastructure;
 

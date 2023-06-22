@@ -1,7 +1,7 @@
 using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
-using JT.DomainDrivenDesign.Domain.VehicleDomain;
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
-using Colour = JT.DomainDrivenDesign.Domain.VehicleDomain.ValueObjects.Colour;
+using JT.DomainDrivenDesign.Domain.Vehicle;
+using JT.DomainDrivenDesign.Domain.Vehicle.Entities;
+using Colour = JT.DomainDrivenDesign.Domain.Vehicle.ValueObjects.Colour;
 
 namespace JT.DomainDrivenDesign.Application.Vehicle.Mappers;
 

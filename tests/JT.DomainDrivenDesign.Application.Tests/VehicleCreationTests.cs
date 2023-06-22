@@ -1,9 +1,10 @@
 using System;
 using System.Threading.Tasks;
 using JT.DomainDrivenDesign.Application.Vehicle.Handlers;
-using JT.DomainDrivenDesign.Domain.VehicleDomain;
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
+using JT.DomainDrivenDesign.Domain.Vehicle;
+using JT.DomainDrivenDesign.Domain.Vehicle.Entities;
+using JT.DomainDrivenDesign.Domain.Vehicle.Repositories;
+using JT.DomainDrivenDesign.Domain.Vehicle.ValueObjects;
 using Moq;
 using Xunit;
 
@@ -60,7 +61,7 @@ public class VehicleCreationHandlerTests
                 Id = id,
                 Model = "test modal",
                 Description = "test description",
-                Colour = new Domain.VehicleDomain.ValueObjects.Colour(255, 0, 0),
+                Colour = new Colour(255, 0, 0),
                 Hitbox = "Octane"
             });
 

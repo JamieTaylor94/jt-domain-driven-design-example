@@ -1,6 +1,6 @@
 using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
 using JT.DomainDrivenDesign.Application.Vehicle.Handlers;
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
+using JT.DomainDrivenDesign.Domain.Vehicle.Repositories;
 using JT.DomainDriverDesign.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);

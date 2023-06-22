@@ -1,6 +1,6 @@
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
+using JT.DomainDrivenDesign.Domain.Vehicle.Entities;
 
-namespace JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
+namespace JT.DomainDrivenDesign.Domain.Vehicle.Repositories;
 
 public interface IVehicleRepository
 { 

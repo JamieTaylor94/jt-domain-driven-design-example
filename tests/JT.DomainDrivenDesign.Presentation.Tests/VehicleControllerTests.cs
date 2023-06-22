@@ -2,6 +2,8 @@ using System.Threading.Tasks;
 using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
 using JT.DomainDrivenDesign.Application.Vehicle.Handlers;
 using JT.DomainDrivenDesign.Presentation.Controllers;
+using JT.DomainDrivenDesign.Presentation.Controllers.Vehicle;
+using JT.DomainDrivenDesign.Presentation.Controllers.Vehicle.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
@@ -48,7 +50,7 @@ public class VehiclesControllerTests
         };
 
         // Act
-        var result = await controller.Retrieve(vehicleDto.Id);
+        var result = await controller.Retrieve(new RetrieveMessage {VehicleId = vehicleDto.Id});
 
         // Assert
         var okResult = Assert.IsType<OkObjectResult>(result);

@@ -1,6 +1,6 @@
-using JT.DomainDrivenDesign.Domain.VehicleDomain.ValueObjects;
+using JT.DomainDrivenDesign.Domain.Vehicle.ValueObjects;
 
-namespace JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
+namespace JT.DomainDrivenDesign.Domain.Vehicle.Entities;
 
 public class VehicleEntity
 {

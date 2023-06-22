@@ -1,6 +1,6 @@
 using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
 using JT.DomainDrivenDesign.Application.Vehicle.Mappers;
-using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
+using JT.DomainDrivenDesign.Domain.Vehicle.Repositories;
 
 namespace JT.DomainDrivenDesign.Application.Vehicle.Handlers;
 
