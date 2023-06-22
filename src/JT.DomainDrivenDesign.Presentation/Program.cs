@@ -1,3 +1,4 @@
+using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
 using JT.DomainDrivenDesign.Application.Vehicle.Handlers;
 using JT.DomainDrivenDesign.Domain.VehicleDomain.Repositories;
 using JT.DomainDriverDesign.Infrastructure;
@@ -9,8 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IVehicleHandler, VehicleHandler>();
 builder.Services.AddScoped<IVehicleRepository, DynamoVehicleRepository>();
+builder.Services.AddScoped<ICommandHandler<CreateVehicleCommand>, VehicleCreationHandler>();
+builder.Services.AddScoped<IQueryHandler<RetrieveVehicleQuery, VehicleDto>, VehicleRetrievalHandler>();
 
 var app = builder.Build();
 

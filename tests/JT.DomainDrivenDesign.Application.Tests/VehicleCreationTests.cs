@@ -1,7 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using JT.DomainDrivenDesign.Application.Vehicle;
-using JT.DomainDrivenDesign.Application.Vehicle.Dtos;
 using JT.DomainDrivenDesign.Application.Vehicle.Handlers;
 using JT.DomainDrivenDesign.Domain.VehicleDomain;
 using JT.DomainDrivenDesign.Domain.VehicleDomain.Entities;
@@ -17,45 +15,40 @@ public class VehicleCreationHandlerTests
     public async Task Handle_ValidInput_CreatesVehicle()
     {
         // Arrange
-        var mockVehicle = CreateVehicleMock();
+        var mockVehicle = SharedMocks.CreateVehicleMock();
 
         var vehicleRepositoryMock = new Mock<IVehicleRepository>();
         vehicleRepositoryMock.Setup(r => r.Get(mockVehicle.Id))!.ReturnsAsync((VehicleEntity)null!);
 
-        var commandHandler = new VehicleHandler(vehicleRepositoryMock.Object);
+        var handler = new VehicleCreationHandler(vehicleRepositoryMock.Object);
 
         // Act
-        await commandHandler.Handle(OperationType.Create, mockVehicle);
+        await handler.Handle(new CreateVehicleCommand(mockVehicle));
 
         // Assert
-        vehicleRepositoryMock.Verify(r => r.Add(It.IsAny<VehicleEntity>()), Times.Once);
+        vehicleRepositoryMock.Verify(r => r.Add(It.Is<VehicleEntity>(v =>
+            v.Id == mockVehicle.Id &&
+            v.Description == mockVehicle.Description &&
+            v.Model == mockVehicle.Model &&
+            v.Colour.Red == mockVehicle.ColourDto.Red &&
+            v.Colour.Green == mockVehicle.ColourDto.Green &&
+            v.Colour.Blue == mockVehicle.ColourDto.Blue &&
+            v.Hitbox.Name == mockVehicle.Hitbox
+        )), Times.Once);
     }
 
     [Fact]
     public async Task Handle_VehicleAlreadyExists_ThrowsException()
     {
         // Arrange
-        var mockVehicle = CreateVehicleMock();
+        var mockVehicle = SharedMocks.CreateVehicleMock();
 
-        var commandHandler = new VehicleHandler(CreateExistingVehicleMock().Object);
+        var vehicleRepositoryMock = CreateExistingVehicleMock();
+
+        var commandHandler = new VehicleCreationHandler(vehicleRepositoryMock.Object);
 
         // Act and Assert
-        await Assert.ThrowsAsync<Exception>(() => commandHandler.Handle(OperationType.Create, mockVehicle));
-    }
-
-    private VehicleDto CreateVehicleMock()
-    {
-        return new VehicleDto
-        {
-            Id = "123",
-            Description = "test description",
-            Model = "test model",
-            ColourDto = new ColourDto
-            {
-                Red = 255, Green = 0, Blue = 0
-            },
-            Hitbox = "Octane"
-        };
+        await Assert.ThrowsAsync<Exception>(() => commandHandler.Handle(new CreateVehicleCommand(mockVehicle)));
     }
 
     private Mock<IVehicleRepository> CreateExistingVehicleMock()
@@ -70,7 +63,7 @@ public class VehicleCreationHandlerTests
                 Colour = new Domain.VehicleDomain.ValueObjects.Colour(255, 0, 0),
                 Hitbox = "Octane"
             });
-        
+
         var vehicleRepositoryMock = new Mock<IVehicleRepository>();
         vehicleRepositoryMock.Setup(r => r.Get(id)).ReturnsAsync(existingVehicle);
 
