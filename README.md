@@ -2,7 +2,7 @@
 
 The purpose of this repository is to serve as a personal reference for implementing a basic structure of Domain-Driven Design (DDD) and hexagonal architecture.
 
-Most of this isn't fact just my opinion at the time of writing.
+Most of this is just my opinion at the time of writing and is likely not 100% correct and I generated the benefits and drawbacks.
 
 ## Domain
 
@@ -36,7 +36,7 @@ While Domain-Driven Design offers numerous benefits, it's important to be aware 
 
 1. **Complexity**: Implementing DDD can introduce additional complexity, especially in large-scale projects, requiring a solid understanding and expertise.
 2. **Learning Curve**: Developers new to DDD may face a learning curve, as it requires a different approach to software design.
-3. **Increased Development Time**: DDD emphasizes analysis, modelling, and collaboration, which may extend the development timeline.
+3. **Increased Development Time**: DDD emphasises analysis, modelling, and collaboration, which may extend the development timeline.
 4. **Team Skill Set**: Adopting DDD may require acquiring new skills and knowledge within the development team.
 5. **Over-Engineering**: Without careful consideration, DDD can lead to over-engineering, resulting in unnecessary complexity.
 
