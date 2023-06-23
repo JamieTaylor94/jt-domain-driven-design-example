@@ -2,7 +2,7 @@
 
 The purpose of this repository is to serve as a personal reference for implementing a basic structure of Domain-Driven Design (DDD) and hexagonal architecture.
 
-Most of this is just my opinion at the time of writing and is likely not 100% correct and I generated the benefits and drawbacks.
+Most of this is just my opinion at the time of writing and is likely not 100% correct and I generated the benefits and drawbacks. I will also try to use rocket league concepts for this just for fun.
 
 ## Domain
 
