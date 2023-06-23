@@ -1,6 +1,8 @@
 # jt-domain-driven-design-example (incomplete)
 
-The purpose of this repository is to serve as a personal reference for implementing a basic structure of Domain-Driven Design (DDD) and hexagonal architecture. 
+The purpose of this repository is to serve as a personal reference for implementing a basic structure of Domain-Driven Design (DDD) and hexagonal architecture.
+
+Most of this isn't fact just my opinion at the time of writing.
 
 ## Domain
 
